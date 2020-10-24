@@ -7,7 +7,7 @@ const members = require('./functions/members');
 
 // Use functions
 new members.join(Client, Discord);
-// new members.leave(Discord);
+new members.leave(Client, Discord);
 
 // On ready
 Client.on('ready', () => {
