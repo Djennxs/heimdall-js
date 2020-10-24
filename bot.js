@@ -14,6 +14,4 @@ Client.on('ready', () => {
   console.log(`Logged in as ${Client.user.tag}!`);
 });
 
-
-
 Client.login(config.tokens.live);
