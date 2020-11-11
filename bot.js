@@ -4,10 +4,14 @@ const config = require('./config.json');
 
 // Include functions
 const members = require('./functions/members');
+// const notify = require('./functions/notify');
 
 // Use functions
 new members.join(Client, Discord);
 new members.leave(Client, Discord);
+
+// Notify functions
+// new notify.training(Client, Discord);
 
 // On ready
 Client.on('ready', () => {
