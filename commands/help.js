@@ -11,6 +11,15 @@ const commandList = {
       'All'
     ]
   },
+  welcome: {
+    title: 'Welcome message',
+    command: 'vkn?welcome',
+    description: 'Lets Heimdall send a message with the basic information, needed for new trials.',
+    access: [
+      'Personnel',
+      'Heads of Departments'
+    ]
+  },
   trial: {
     title: 'Add trial role',
     command: 'vkn?trial @mention',
