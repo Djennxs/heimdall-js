@@ -1,6 +1,6 @@
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-function join(Client, Discord) {
+const join = (Client, MessageEmbed) => {
   Client.on('ready', () => {
     console.log('Join script is ready!');
   });
@@ -11,7 +11,7 @@ function join(Client, Discord) {
 
     if (!log || !newUser) return;
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
     .setAuthor('Member joined')
     .setColor('0x2ecc71')
     .setTimestamp(new Date())
@@ -40,16 +40,16 @@ Read more about us <https://www.vikingpmc.com/>
 
 **Apply to the unit**
 Answer the questions below and join us for an operation to see if we are the right fit for you. <:vknlogo:440480020016922624>
-    1. Are you over 18 years old?
-    2. Are you currently part of another unit? 
+   1. Are you over 18 years old?
+   2. Are you currently part of another unit? 
       *(if yes, which one?)*
-    3. Tell us about your previous experience in Arma
-    4. Tell us a little bit about who you are 
+   3. Tell us about your previous experience in Arma
+   4. Tell us a little bit about who you are 
       *(where are you from, hobbies etc)*
-    5. Can you play on our operation times? 
+   5. Can you play on our operation times? 
       *(Tuesday & Thursday at 19:00 CET/CEST)*
-    6. How did you find out about us?
-
+   6. How did you find out about us?
+   
 **USEFUL INFO**
 <#243066813456318475> - basic Discord information
 <#653222699555880960> - Mods, documentation, IP-addresses
@@ -61,7 +61,7 @@ If there is anything else we can help you with, let us know in the chat below. W
   });
 
 }
-function leave(Client, Discord) {
+const leave = (Client, Discord) => {
   Client.on('ready', () => {
     console.log('Leave script is ready!');
   });
@@ -76,7 +76,7 @@ function leave(Client, Discord) {
 
     if (!log) return;
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
     .setAuthor(message)
     .setColor('0xf44336')
     .setTimestamp(new Date())

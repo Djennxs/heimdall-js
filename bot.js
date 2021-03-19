@@ -1,5 +1,6 @@
-const Discord = require('discord.js');
-const Client = new Discord.Client();
+const { Client, MessageEmbed, Intents } = require('discord.js');
+
+const client = new Client({ ws: { intents: Intents.ALL } });
 const config = require('./config.json');
 
 // Include functions
@@ -7,15 +8,15 @@ const members = require('./functions/members');
 // const notify = require('./functions/notify');
 
 // Use functions
-new members.join(Client, Discord);
-new members.leave(Client, Discord);
+members.join(client, MessageEmbed);
+members.leave(client, MessageEmbed);
 
 // Notify functions
-// new notify.training(Client, Discord);
+// new notify.training(client, Discord);
 
 // On ready
-Client.on('ready', () => {
-  console.log(`Logged in as ${Client.user.tag}!`);
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
-Client.login(config.tokens.live);
+client.login(config.tokens.live);
