@@ -1,1 +1,2 @@
 - Add role on reaction
+- Add available roles array in command files

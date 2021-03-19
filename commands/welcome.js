@@ -14,9 +14,9 @@ const welcomeCommand = (Client) => {
     
     /**
     * 
-    * Handle Trial role
+    * Handle welcome message
     */
-    if (command === 'welcome') {
+    if (command === 'welcome' && message.member.roles.cache.find(role => role.name === 'Personnel')) {
       message.channel.send(`__**Welcome to VIKING PMC**__
 Down below you'll find some important information about the recruitment process in VKN. Don't be afraid to ask questions if you have any.
 Setup for new users: <http://tiny.cc/VKN_Setup>

@@ -3,7 +3,6 @@ const { Client, Intents } = require('discord.js');
 const client = new Client({ ws: { intents: Intents.ALL } });
 const config = require('./config.json');
 
-
 /**
  * 
  * Require functions

@@ -64,7 +64,7 @@ If there is anything else we can help you with, let us know in the chat below. W
     
     channels.log.send(embed);
 
-    handleRoles.add(member, 'New user');
+    handleRoles.add(member, 'New User');
   });
 
 }
