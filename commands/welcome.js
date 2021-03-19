@@ -1,4 +1,3 @@
-const { handleRoles } = require('../functions/roles');
 const config = require('../config.json');
 
 const welcomeCommand = (Client) => {
@@ -12,9 +11,6 @@ const welcomeCommand = (Client) => {
     // Set command and arguments of the command if they exist
     const args = message.content.slice(config.prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
-    
-    // Remove the command message
-    message.delete();
     
     /**
     * 
@@ -35,6 +31,9 @@ A Personnel trainer will book a basic training session (unique to VKN).
 
 Attend operations, have a good time and get active in Discord. You will naturally earn the rank VIKING.
 Make sure to read <#243066813456318475>, <#653222699555880960> and <#588310853904760833>.`);
+
+      // Remove the command message
+      message.delete();
     }
   });
 }
