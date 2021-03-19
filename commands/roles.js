@@ -27,7 +27,7 @@ const roleCommands = (Client) => {
         let member = message.guild.member(user);
         
         if (member) {
-          handleRoles.remove(member, ['New user', 'Recruit', 'Viking']);
+          handleRoles.remove(member, ['New User', 'Recruit', 'Viking']);
           handleRoles.add(member, 'Trial');
         }
       }
@@ -41,7 +41,7 @@ const roleCommands = (Client) => {
         let member = message.guild.member(user);
         
         if (member) {
-          handleRoles.remove(member, ['New user', 'Trial', 'Viking']);
+          handleRoles.remove(member, ['New User', 'Trial', 'Viking']);
           handleRoles.add(member, 'Recruit');
         }
       }
@@ -55,7 +55,7 @@ const roleCommands = (Client) => {
         let member = message.guild.member(user);
         
         if (member) {
-          handleRoles.remove(member, ['New user', 'Trial', 'Recruit']);
+          handleRoles.remove(member, ['New User', 'Trial', 'Recruit']);
           handleRoles.add(member, 'Viking');
         }
       }

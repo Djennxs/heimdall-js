@@ -1,4 +1,4 @@
-const { Client, MessageEmbed, Intents } = require('discord.js');
+const { Client, Intents } = require('discord.js');
 
 const client = new Client({ ws: { intents: Intents.ALL } });
 const config = require('./config.json');
@@ -9,18 +9,19 @@ const config = require('./config.json');
  */
 const members = require('./functions/members');
 const roles = require('./commands/roles');
+const welcome = require('./commands/welcome');
 
 /**
  * 
  * Use functions
  */
-
 // Members
-members.join(client, MessageEmbed);
-members.leave(client, MessageEmbed);
+members.join(client);
+members.leave(client);
 
-// Roles
+// Commands
 roles.roleCommands(client);
+welcome.welcomeCommand(client);
 
 /**
  * 
