@@ -8,7 +8,7 @@ You need Node 12+ to run Discord.js
 ## Installation
 Start by cloning the repository, after that install Discord.js
 ```bash
-npm install Discord.js
+npm install
 ```
 
 ## Usage
