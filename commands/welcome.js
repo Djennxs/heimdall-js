@@ -28,8 +28,8 @@ Personnel will have a chat with Trials. If both parties think that you fit in VK
 **Step 3**
 A Personnel trainer will book a basic training session (unique to VKN). 
 **Step 4**
-
 Attend operations, have a good time and get active in Discord. You will naturally earn the rank VIKING.
+
 Make sure to read <#243066813456318475>, <#653222699555880960> and <#588310853904760833>.`);
 
       // Remove the command message
