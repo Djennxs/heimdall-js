@@ -1,15 +1,20 @@
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-const join = (Client, MessageEmbed) => {
+const { MessageEmbed } = require('discord.js');
+const { handleRoles } = require('./roles');
+
+const join = (Client) => {
   Client.on('ready', () => {
     console.log('Join script is ready!');
   });
 
   Client.on('guildMemberAdd', member => {
-    const log = member.guild.channels.cache.find(channel => channel.name === 'log');
-    const newUser = member.guild.channels.cache.find(channel => channel.name === 'new_user');
+    const channels = {
+      log: member.guild.channels.cache.find(channel => channel.name === 'log'),
+      newUser: member.guild.channels.cache.find(channel => channel.name === 'new_user')
+    };
 
-    if (!log || !newUser) return;
+    if (!channels.log || !channels.newUser) return;
 
     const embed = new MessageEmbed()
     .setAuthor('Member joined')
@@ -35,7 +40,7 @@ const join = (Client, MessageEmbed) => {
     )
     .setThumbnail(member.user.displayAvatarURL());
 
-    newUser.send(`__**Welcome to VIKING PMC, ${member}!**__
+    channels.newUser.send(`__**Welcome to VIKING PMC, ${member}!**__
 Read more about us <https://www.vikingpmc.com/>
 
 **Apply to the unit**
@@ -57,24 +62,28 @@ Answer the questions below and join us for an operation to see if we are the rig
 
 If there is anything else we can help you with, let us know in the chat below. We'll get back to you as soon as we can!`);
     
-    log.send(embed);
+    channels.log.send(embed);
+
+    handleRoles.add(member, 'New user');
   });
 
 }
-const leave = (Client, Discord) => {
+const leave = (Client) => {
   Client.on('ready', () => {
     console.log('Leave script is ready!');
   });
 
   Client.on('guildMemberRemove', member => {
-    const log = member.guild.channels.cache.find(channel => channel.name === 'log');
+    const channels = {
+      log: member.guild.channels.cache.find(channel => channel.name === 'log'),
+    };
     let message = 'Member left';
 
     if (member.delete) {
       message = 'Member kicked';
     }
 
-    if (!log) return;
+    if (!channels.log) return;
 
     const embed = new MessageEmbed()
     .setAuthor(message)
@@ -100,7 +109,7 @@ const leave = (Client, Discord) => {
     )
     .setThumbnail(member.user.displayAvatarURL());
 
-    log.send(embed);
+    channels.log.send(embed);
   });
 }
 

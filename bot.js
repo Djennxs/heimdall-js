@@ -3,18 +3,29 @@ const { Client, MessageEmbed, Intents } = require('discord.js');
 const client = new Client({ ws: { intents: Intents.ALL } });
 const config = require('./config.json');
 
-// Include functions
+/**
+ * 
+ * Require functions
+ */
 const members = require('./functions/members');
-// const notify = require('./functions/notify');
+const roles = require('./commands/roles');
 
-// Use functions
+/**
+ * 
+ * Use functions
+ */
+
+// Members
 members.join(client, MessageEmbed);
 members.leave(client, MessageEmbed);
 
-// Notify functions
-// new notify.training(client, Discord);
+// Roles
+roles.roleCommands(client);
 
-// On ready
+/**
+ * 
+ * On ready
+ */
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
