@@ -36,4 +36,4 @@ client.on('ready', () => {
   client.user.setActivity("vkn?help");
 });
 
-client.login(config.tokens.test);
+client.login(config.tokens.live);
