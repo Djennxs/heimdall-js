@@ -60,8 +60,9 @@ const commandList = {
 
 const helpCommand = (Client) => {
   Client.on('ready', () => {
-    console.log('Help commands ready!');
+    console.log('Help command ready!');
   });
+
   
   Client.on('message', message => {
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;

@@ -16,7 +16,7 @@ const roleCommands = (Client) => {
     const command = args.shift().toLowerCase();
 
     // Check if the argument exists, otherwise ignore the command
-    if (args.length > 0 && message.member.roles.cache.find(role => role.name == 'Personnel')) { 
+    if (args.length > 0 && message.member.roles.cache.find(role => role.name == 'Personnel')) {
 
       definedRoles.forEach(role => {
         if (command === role.toLowerCase() && (args[0].startsWith('<@') && args[0].endsWith('>'))) {
