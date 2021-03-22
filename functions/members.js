@@ -55,19 +55,24 @@ If you are still interested in applying to our unit, please do not leave the dis
     } else {
       channels.newUser.send(`__**Welcome to VIKING PMC, ${member}!**__
 Read more about us <https://www.vikingpmc.com/>
+Check out who we are here: <https://youtu.be/njd8yIW-y4g>
 
 **Apply to the unit**
 Answer the questions below and join us for an operation to see if we are the right fit for you. <:vknlogo:440480020016922624>
-   1. Are you over 18 years old?
-   2. Are you currently part of another unit? 
+
+    1. Are you over 18 years old?
+    2. Are you currently part of another unit? 
       *(if yes, which one?)*
-   3. Tell us about your previous experience in Arma
-   4. Tell us a little bit about who you are 
+    3. Tell us about your previous experience in Arma
+    4. Tell us a little bit about who you are 
       *(where are you from, hobbies etc)*
-   5. Can you play on our operation times? 
+    5. Can you play on our operation times? 
       *(Tuesday & Thursday at 19:00 CET/CEST)*
-   6. How did you find out about us?
-   
+    6. How did you find out about us?
+
+Are you having trouble filling out the application?
+Check out KayPee's application right here: <https://discordapp.com/channels/243066813456318475/243066813456318475/766246339154935859>
+
 **USEFUL INFO**
 <#243066813456318475> - basic Discord information
 <#653222699555880960> - Mods, documentation, IP-addresses
