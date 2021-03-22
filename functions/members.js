@@ -40,7 +40,7 @@ const join = (Client) => {
     )
     .setThumbnail(member.user.displayAvatarURL());
 
-    channels.newUser.send(`__**Welcome to VIKING PMC, {member.mention}!**__
+    channels.newUser.send(`__**Welcome to VIKING PMC, ${member}!**__
 Read more about us <https://www.vikingpmc.com/>
 Check out who we are here: <https://youtu.be/njd8yIW-y4g>
 
