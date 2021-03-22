@@ -45,13 +45,21 @@ const join = (Client) => {
     trialRole.members.map(trials => trialAmount++);
 
     if (trialAmount >= 12) {
-      channels.newUser.send(`__**Welcome to Viking PMC, ${member}!**__
+      channels.newUser.send(`__**Welcome to Viking PMC, ${member}**__
+Read more about us <https://www.vikingpmc.com/>
+Check out who we are here: <https://youtu.be/njd8yIW-y4g>
 
+**IMPORTANT NOTICE**
 Due to the current rise in interest in our community we are temporarily suspending new applications to join while we do our best to provide the best support to our current cohort of trial members. 
 
-If you are still interested in applying to our unit, please do not leave the discord as we will update you when the next position is available. 
+If you are still interested in applying to our unit, please do not leave the discord as we will update you when the next positions are available. 
 
-/Personnel Department`);
+**USEFUL INFO**
+<#243066813456318475> - basic Discord information
+<#653222699555880960> - Mods, documentation, IP-addresses
+<#588310853904760833> - Ruleset for the unit
+
+If there is anything else we can help you with, let us know in the chat below. We'll get back to you as soon as we can!`);
     } else {
       channels.newUser.send(`__**Welcome to VIKING PMC, ${member}!**__
 Read more about us <https://www.vikingpmc.com/>
