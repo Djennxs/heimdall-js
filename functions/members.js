@@ -40,19 +40,22 @@ const join = (Client) => {
     )
     .setThumbnail(member.user.displayAvatarURL());
 
-    let trialAmount = 0;
+    let liabilityAmount = 0;
     const trialRole = member.guild.roles.cache.find(role => role.name === 'Trial');
-    trialRole.members.map(trials => trialAmount++);
+    trialRole.members.map(trials => liabilityAmount++);
 
-    if (trialAmount >= 12) {
+    const recruitRole = member.guild.roles.cache.find(role => role.name === 'Recruit');
+    recruitRole.members.map(recruits => liabilityAmount++);
+
+    if (liabilityAmount >= 12) {
       channels.newUser.send(`__**Welcome to Viking PMC, ${member}**__
 Read more about us <https://www.vikingpmc.com/>
 Check out who we are here: <https://youtu.be/njd8yIW-y4g>
 
 **IMPORTANT NOTICE**
-Due to the current rise in interest in our community we are temporarily suspending new applications to join while we do our best to provide the best support to our current cohort of trial members. 
+Due to the current rise in interest in our community we are temporarily suspending new applications while we provide support to our current batch of trial members. 
 
-If you are still interested in applying to our unit, please do not leave the discord as we will update you when the next positions are available. 
+If you are still interested in applying to our unit, please do not leave the Discord as we will update you when the next positions are available.
 
 **USEFUL INFO**
 <#243066813456318475> - basic Discord information
