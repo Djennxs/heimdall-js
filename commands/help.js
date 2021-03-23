@@ -55,6 +55,14 @@ const commandList = {
       'Personnel',
       'Heads of Departments'
     ]
+  },
+  faq: {
+    title: 'Sends a FAQ to mentioned user',
+    command: 'vkn?faq @mention',
+    description: 'Sends a DM to the mentioned user with a FAQ, to guide them with various issues.',
+    access: [
+      'All'
+    ]
   }
 }
 

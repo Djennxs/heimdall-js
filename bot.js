@@ -10,6 +10,7 @@ const config = require('./config.json');
 const members = require('./functions/members');
 const roles = require('./commands/roles');
 const welcome = require('./commands/welcome');
+const faq = require('./commands/faq');
 const help = require('./commands/help');
 
 /**
@@ -23,6 +24,7 @@ members.leave(client);
 // Commands
 roles.roleCommands(client);
 welcome.welcomeCommand(client);
+faq.faqCommand(client);
 help.helpCommand(client);
 
 /**
@@ -36,4 +38,8 @@ client.on('ready', () => {
   client.user.setActivity("vkn?help");
 });
 
+<<<<<<< HEAD
 client.login(config.tokens[`${config.mode}`]);
+=======
+client.login(config.tokens.test);
+>>>>>>> 377c06080a29f24b88c87598b1eaf37e73812177
