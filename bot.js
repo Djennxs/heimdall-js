@@ -24,7 +24,7 @@ members.leave(client);
 // Commands
 roles.roleCommands(client);
 welcome.welcomeCommand(client);
-faq.helpCommand(client);
+faq.faqCommand(client);
 help.helpCommand(client);
 
 /**
