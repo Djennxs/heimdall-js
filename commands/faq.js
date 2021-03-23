@@ -8,10 +8,11 @@ const helpCommand = (Client) => {
 }
 
 Client.on('message', message => {
-    if (!message.content.startsWith(config.prefix) || message.author.bot) return;
-    const channel = await getUserFromMention(Client, args[0]).createDM();
-    const user = await channel.send('Hello there! Here is a FAQ for Viking PMC, to guide you through the installation, common questions, or similar.');
-}
+  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+  
+  const channel = await getUserFromMention(Client, args[0]).createDM();
+  await channel.send('Hello there! Here is a FAQ for Viking PMC, to guide you through the installation, common questions, or similar.');
+});
 
 /**
 * 

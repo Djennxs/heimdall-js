@@ -10,6 +10,7 @@ const config = require('./config.json');
 const members = require('./functions/members');
 const roles = require('./commands/roles');
 const welcome = require('./commands/welcome');
+const faq = require('./commands/faq');
 const help = require('./commands/help');
 
 /**
@@ -23,6 +24,7 @@ members.leave(client);
 // Commands
 roles.roleCommands(client);
 welcome.welcomeCommand(client);
+faq.helpCommand(client);
 help.helpCommand(client);
 
 /**
