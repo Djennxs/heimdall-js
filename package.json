@@ -1,6 +1,6 @@
 {
   "name": "heimdall-js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Heimdall Discord bot for Viking PMC",
   "main": "bot.js",
   "dependencies": {
