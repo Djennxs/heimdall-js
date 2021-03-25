@@ -38,8 +38,4 @@ client.on('ready', () => {
   client.user.setActivity("vkn?help");
 });
 
-<<<<<<< HEAD
 client.login(config.tokens[`${config.mode}`]);
-=======
-client.login(config.tokens.test);
->>>>>>> 377c06080a29f24b88c87598b1eaf37e73812177
