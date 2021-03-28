@@ -69,8 +69,7 @@ const join = (Client) => {
 
         content = content.replaceAll(/\${member}/ig, member);
         content = content.replaceAll(/#([a-z]+)/ig, (regex, capture) => {
-          console.log(capture, member.guild.channels.cache.find(channel => channel.name = capture));
-          return `<#${member.guild.channels.cache.find(channel => channel.name = capture).id}>`;
+          return `<#${member.guild.channels.cache.find(channel => channel.name === capture).id}>`;
         });
 
         if (liabilityAmount >= 12) {
