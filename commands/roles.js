@@ -1,4 +1,4 @@
-const { handleRoles } = require('../functions/roles');
+const { handleRoles } = require('../Functions/roles');
 const config = require('../config.json');
 
 const definedRoles = ['New User', 'Trial', 'Recruit', 'Viking', 'Mercenary'];
