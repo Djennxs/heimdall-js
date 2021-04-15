@@ -60,46 +60,45 @@ const join = (Client) => {
       database: config.database.name
     });
 
-    pool.getConnection((err, connection) => {
-      connection.query('SELECT `content_discord` FROM `messages` WHERE title = "welcome"', (err, result) => {
-        connection.release();
-        if (err) throw err;
-
-        let content = atob(result[0].content_discord);
-
-        content = content.replaceAll(/\${member}/ig, member);
-        content = content.replaceAll(/#([a-z]+)/ig, (regex, capture) => {
-          console.log(capture, member.guild.channels.cache.find(channel => channel.name = capture));
-          return `<#${member.guild.channels.cache.find(channel => channel.name = capture).id}>`;
+    if (liabilityAmount >= 12) {
+      pool.getConnection((err, connection) => {
+        connection.query('SELECT `content_discord` FROM `messages` WHERE title = "trial-recruit-cap"', (err, result) => {
+          connection.release();
+          if (err) throw err;
+  
+          let content = atob(result[0].content_discord);
+  
+          content = content.replaceAll(/\${member}/ig, member);
+          content = content.replaceAll(/#([a-z]+)/ig, (regex, capture) => {
+            return `<#${member.guild.channels.cache.find(channel => channel.name === capture).id}>`;
+          });
+  
+            channels.newUser.send(content);
         });
-
-        if (liabilityAmount >= 12) {
-          channels.newUser.send(`__**Welcome to Viking PMC, ${member}**__
-Read more about us <https://www.vikingpmc.com/>
-Check out who we are here: <https://youtu.be/njd8yIW-y4g>
-
-**IMPORTANT NOTICE**
-Due to the current rise in interest in our community we are temporarily suspending new applications while we provide support to our current batch of trial members. 
-
-If you are still interested in applying to our unit, please do not leave the Discord as we will update you when the next positions are available.
-
-**USEFUL INFO**
-<#243066813456318475> - basic Discord information
-<#653222699555880960> - Mods, documentation, IP-addresses
-<#588310853904760833> - Ruleset for the unit
-
-If there is anything else we can help you with, let us know in the chat below. We'll get back to you as soon as we can!`);
-        } else {
-          channels.newUser.send(content);
-        }
-        
-        channels.log.send(embed);
-        handleRoles.add(member, 'New User');
       });
-    });
+    } else {
+      pool.getConnection((err, connection) => {
+        connection.query('SELECT `content_discord` FROM `messages` WHERE title = "welcome"', (err, result) => {
+          connection.release();
+          if (err) throw err;
+  
+          let content = atob(result[0].content_discord);
+  
+          content = content.replaceAll(/\${member}/ig, member);
+          content = content.replaceAll(/#([a-z]+)/ig, (regex, capture) => {
+            return `<#${member.guild.channels.cache.find(channel => channel.name === capture).id}>`;
+          });
+  
+            channels.newUser.send(content);
+        });
+      });
+    }
+    
+    handleRoles.add(member, 'New User');
+    channels.log.send(embed);
   });
-
 }
+
 const leave = (Client) => {
   Client.on('ready', () => {
     console.log('Leave script is ready!');
