@@ -13,6 +13,9 @@ const welcome = require('./commands/welcome');
 const faq = require('./commands/faq');
 const help = require('./commands/help');
 
+// Watchers
+const roleWatcher = require('./watchers/roles');
+
 /**
  * 
  * Use functions
@@ -26,6 +29,9 @@ roles.roleCommands(client);
 welcome.welcomeCommand(client);
 faq.faqCommand(client);
 help.helpCommand(client);
+
+// Watchers
+roleWatcher.roleChange(client);
 
 /**
  * 
