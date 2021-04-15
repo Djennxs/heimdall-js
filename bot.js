@@ -33,7 +33,6 @@ welcome.welcomeCommand(client);
 faq.faqCommand(client);
 help.helpCommand(client);
 
-<<<<<<< HEAD
 // Watchers
 roleWatcher.roleChange(client);
 
@@ -41,9 +40,6 @@ roleWatcher.roleChange(client);
  * 
  * On ready
  */
-=======
-// On ready
->>>>>>> c6daac5b4a4394d5d97acd664c11dbbe57976e8b
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   
