@@ -9,15 +9,15 @@ const client = new Client({ ws: { intents: Intents.ALL } });
 const config = require('./config.json');
 
 // Require functions
-const members = require('./Functions/members');
-const roles = require('./Commands/roles');
-const welcome = require('./Commands/welcome');
-const faq = require('./Commands/faq');
-const help = require('./Commands/help');
+const members = require('./Functions/Members');
+const roles = require('./Commands/Roles');
+const welcome = require('./Commands/Welcome');
+const faq = require('./Commands/Faq');
+const help = require('./Commands/Help');
 
 // Use functions
 // Watchers
-const roleWatcher = require('./watchers/roles');
+const roleWatcher = require('./Watchers/Roles');
 
 /**
  * 
