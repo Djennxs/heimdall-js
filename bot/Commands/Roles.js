@@ -1,8 +1,15 @@
 const { handleRoles } = require('../Functions/Roles');
 const { ErrorMessage } = require('../Functions/ErrorMessage');
+const { SaveOrUpdateMember } = require('../Functions/SaveOrUpdateMember');
 const config = require('./../../config.json');
 
-const definedRoles = ['New User', 'Trial', 'Recruit', 'Viking', 'Mercenary'];
+const definedRoles = [
+  'New User',
+  'Trial',
+  'Recruit',
+  'Viking',
+  'Mercenary'
+];
 
 const RoleCommands = (Client) => {
   Client.on('ready', () => {
@@ -27,6 +34,8 @@ const RoleCommands = (Client) => {
           let removeRoles = definedRoles.filter(removeRole => removeRole !== role);
 
           if (member) {
+            SaveOrUpdateMember(member, message.author, role);
+
             handleRoles.remove(member, removeRoles);
             handleRoles.add(member, role);
           }
